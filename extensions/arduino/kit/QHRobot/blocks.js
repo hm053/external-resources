@@ -3,6 +3,7 @@
 /* eslint-disable require-jsdoc */
 function addBlocks (Blockly) {
     const QH_Sensor_color = '#27b6ac';
+    const QH_Sensor_color2 = '#a5675b';
     const QH_Actuator_color = '#AE8F00';
     const QH_SPEECH_color1 = '#ae8f00';
     const QH_SPEECH_color2 = '#5ba5a5';
@@ -526,6 +527,58 @@ const QH_smgxs=[["auto", "auto"],["1", "1"],["2", "2"],["3", "3"]];
                 ],
                 "tooltip": "超声波测距，注意单位的选择，\n使用时如果波动大请注意检查程序或放宽取值区间",
                 colour: QH_Sensor_color,
+                extensions: ['output_number']
+            });
+        }
+    };
+    Blockly.Blocks.qdp_chaoshengboI2C = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.qdp_chaoshengboI2C,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_UltraSonicDistanceSensor_ICO,
+                        width: 30,
+                        height: 30
+                    }
+                ],
+                args1: [
+                ],
+                "tooltip": "超声波测距(I2C模式)，返回单位为mm,传感器盲区2CM\n拨码开关状态:IIC=ON,UART=OFF  切换模式后要断电重启模块！",
+                colour: QH_Sensor_color2,
+                extensions: ['output_number']
+            });
+        }
+    };
+    Blockly.Blocks.qdp_chaoshengboSerial = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.qdp_chaoshengboSerial,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_UltraSonicDistanceSensor_ICO,
+                        width: 30,
+                        height: 30
+                    }
+                ],
+                args1: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'mode',
+                        options: [["IO", "1"],["UART", "0"]]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'PIN',
+                        options: QH_C01_PIN
+                    }                    
+                ],
+                "tooltip": "超声波测距(串口模式/IO模式)，返回单位为mm,传感器盲区2CM\n串口模式拨码开关状态:IIC=OFF,UART=ON\nIO模式拨码开关状态:IIC=OFF,UART=OFF 切换模式后要断电重启模块！",
+                colour: QH_Sensor_color2,
                 extensions: ['output_number']
             });
         }
@@ -1270,6 +1323,47 @@ const QH_smgxs=[["auto", "auto"],["1", "1"],["2", "2"],["3", "3"]];
             });
         }
     };
+
+    //RGB2
+    Blockly.Blocks.QH_rgb_led2 = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.QH_rgb_led2,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_RGB_ICO,
+                        width: 30,
+                        height: 30
+                    }
+                ],
+                args1: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'PIN',
+                        options: QH_OUTPUT_RIGHT_PIN
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'num8'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'num1'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'colour'
+                    }
+                ],
+                "tooltip": "RGB对应灯号颜色的值，灯号共4个，总灯数跟模块灯数相同，0为全部同时工作\n对应的值是代表第几个灯的，最大255，0为关",
+                colour: QH_Actuator_color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
     //蜂鸣器
     Blockly.Blocks.QH_buzzer = {
         init: function () {

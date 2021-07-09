@@ -34,6 +34,8 @@ function addToolbox () {
     <block type="QH_buttonfuction_do" id="QH_buttonfuction_do"></block>
     <label text="%{BKY_QH_SENSOR_LABEL}"></label>
     <block type="QH_UltraSonicDistanceSensor" id="QH_UltraSonicDistanceSensor"></block>
+    <block type="qdp_chaoshengboI2C"></block>
+    <block type="qdp_chaoshengboSerial"></block>
     <block type="QH_Line_follower" id="QH_Line_follower"></block>
     <block type="QH_lightSensor" id="QH_lightSensor"></block>
     <block type="QH_sound" id="QH_sound"></block>
@@ -121,6 +123,21 @@ function addToolbox () {
             <shadow type="math_number">
                 <field name="NUM">0</field>
             </shadow>
+        </value>
+    </block>
+    <block type="QH_rgb_led2">
+        <value name="num8">
+            <shadow type="math_number">
+                <field name="NUM">4</field>
+            </shadow>
+        </value>
+        <value name="num1">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="colour">
+            <shadow type="colour_picker"/>
         </value>
     </block>
     <label text="%{BKY_QH_BUZZER_LABEL}"></label>
@@ -825,6 +842,72 @@ function addToolbox () {
         </shadow>
       </value>
     </block>
+    <label text="------"></label>
+    <block type="tool_modulus">
+        <field name="modulus_way">2</field>
+        <field name="modulus_direction">2</field>
+        <value name="hz_line_height">
+            <shadow type="text">
+              <field name="TEXT">16</field>
+            </shadow>
+        </value>
+        <value name="bitmap_width">
+            <shadow type="text">
+              <field name="TEXT">128</field>
+            </shadow>
+        </value>
+        <value name="bitmap_height">
+            <shadow type="text">
+              <field name="TEXT">64</field>
+            </shadow>
+        </value>
+        <value name="input_data">
+            <shadow type="text">
+              <field name="TEXT">齐护机器人</field>
+            </shadow>
+        </value>        
+    </block>
+    <block type="oled_page">
+      <value name="NAME">
+        <shadow type="text">
+          <field name="TEXT">u8g2</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="oled_showBitmap" >
+      <value name="NAME">
+        <shadow type="text">
+          <field name="TEXT">u8g2</field>
+        </shadow>
+      </value>
+      <value name="START_X">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="START_Y">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="WIDTH">
+        <shadow type="math_number">
+          <field name="NUM">128</field>
+        </shadow>
+      </value>
+      <value name="HEIGHT">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="bitmap_name">
+        <shadow type="text">
+          <field name="TEXT">bitmap</field>
+        </shadow>
+      </value>
+    </block>   
+    
+
 </category>
 <category name="%{BKY_QH_SDISPLAY_CATEGORY}" id="QH_SDISPLAY_CATEGORY" colour="#42CCFF" secondaryColour="#42CCFF" iconURI="${QH_SDISPLAY_ICO}">
     <block type="QH_display_samll_refresh_display"></block>

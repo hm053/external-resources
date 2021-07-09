@@ -1,12 +1,12 @@
 const QDPRobotC02 = formatMessage => ({
-    name: 'QDP RobotC02',
+    name: 'QDPRobot C02',
     deviceId: 'QDPRobotC02_arduinoEsp32',
-    manufactor: 'QDP Robot',
+    manufactor: 'QDPRobot',
     leanMore: 'https://qdprobot.taobao.com',
     iconURL: 'asset/QDPRobotC02.png',
     description: formatMessage({
         id: 'QDPRobotC02.description',
-        default: 'QDP robot.',
+        default: 'QDProbot.',
         description: 'Description for the QDP robot device'
     }),
     disabled: false,
@@ -24,7 +24,7 @@ const QDPRobotC02 = formatMessage => ({
     connectionSmallIconURL: 'asset/QDPRobotC02-small.svg',
     programMode: ['upload'],
     programLanguage: ['block', 'cpp'],
-    tags: ['microbit', 'kit'],
+    tags: ['kit'],
     deviceExtensions: ['QDPRobotC02'],
     deviceExtensionsCompatible: 'arduinoEsp32',
     helpLink: 'http://www.qdprobot.com/'

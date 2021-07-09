@@ -1,12 +1,12 @@
 const QDPRobot = formatMessage => ({
-    name: 'QDP Robot',
+    name: 'QDPRobot UNO',
     deviceId: 'QDPRobot_arduinoUnoUltra',
-    manufactor: 'QDP Robot',
+    manufactor: 'QDPRobot',
     leanMore: 'https://qdprobot.taobao.com',
     iconURL: 'asset/QDPRobot.png',
     description: formatMessage({
         id: 'QDPRobot.description',
-        default: 'QDP robot.',
+        default: 'QDProbot.',
         description: 'Description for the QDP robot device'
     }),
     disabled: false,
@@ -24,7 +24,7 @@ const QDPRobot = formatMessage => ({
     connectionSmallIconURL: 'asset/QDPRobot-small.svg',
     programMode: ['realtime', 'upload'],
     programLanguage: ['block', 'cpp'],
-    tags: ['arduino', 'kit'],
+    tags: ['kit'],
     deviceExtensions: ['QDPRobot'],
     deviceExtensionsCompatible: 'arduinoUno',
     helpLink: 'http://www.qdprobot.com/'

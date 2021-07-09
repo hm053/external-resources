@@ -29,10 +29,6 @@ function addToolbox () {
 
       const QH_WIFI_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwNzc4ODgzNzU3IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwMTQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxNy44MTgxODIgNjU5Ljc4MTgxOGE4MC41MjM2MzYgODAuNTIzNjM2IDAgMCAwLTU3LjQ4MzYzNyAyMy4yNzI3MjcgODIuODUwOTA5IDgyLjg1MDkwOSAwIDAgMCAwIDExNi4zNjM2MzcgODEuNDU0NTQ1IDgxLjQ1NDU0NSAwIDAgMCA1Ny4yNTA5MSAyMy4yNzI3MjcgODAuMDU4MTgyIDgwLjA1ODE4MiAwIDAgMCA1Ny4yNTA5MDktMjMuMjcyNzI3IDgyLjM4NTQ1NSA4Mi4zODU0NTUgMCAwIDAgMC0xMTYuMzYzNjM3IDgwLjUyMzYzNiA4MC41MjM2MzYgMCAwIDAtNTcuMDE4MTgyLTIzLjI3MjcyN3ogbTM4NC45MzA5MDktMjU2di0xLjE2MzYzNmE0ODguNzI3MjczIDQ4OC43MjcyNzMgMCAwIDAtNDAuNzI3MjczLTQ2LjU0NTQ1NSA0ODMuMzc0NTQ1IDQ4My4zNzQ1NDUgMCAwIDAtNjg3LjcwOTA5MSAwQTQ0OS42MjkwOTEgNDQ5LjYyOTA5MSAwIDAgMCAxMzkuNjM2MzY0IDM5NS42MzYzNjRhNTQuNDU4MTgyIDU0LjQ1ODE4MiAwIDAgMCAzNy43MDE4MTggOTMuMDkwOTA5IDUyLjgyOTA5MSA1Mi44MjkwOTEgMCAwIDAgNDAuMjYxODE4LTE4Ljg1MDkwOSAzLjQ5MDkwOSAzLjQ5MDkwOSAwIDAgMCAyLjA5NDU0NS0xLjM5NjM2NCAzMzYuNzU2MzY0IDMzNi43NTYzNjQgMCAwIDEgMzEuNjUwOTEtMzYuMzA1NDU1IDM3NS44NTQ1NDUgMzc1Ljg1NDU0NSAwIDAgMSA1MzUuMjcyNzI3IDAgMzYyLjEyMzYzNiAzNjIuMTIzNjM2IDAgMCAxIDM1Ljg0IDQxLjg5MDkxIDUuNTg1NDU1IDUuNTg1NDU1IDAgMCAwIDIuNzkyNzI3IDEuNjI5MDkgNTMuMDYxODE4IDUzLjA2MTgxOCAwIDAgMCAzNS44NCAxMy45NjM2MzcgNTMuOTkyNzI3IDUzLjk5MjcyNyAwIDAgMCA0Ni41NDU0NTUtMjkuMzIzNjM3IDU0LjkyMzYzNiA1NC45MjM2MzYgMCAwIDAtNC44ODcyNzMtNTYuNzg1NDU0eiBtLTE1My4xMzQ1NDYgMTU5LjQxODE4MmE5LjU0MTgxOCA5LjU0MTgxOCAwIDAgMC0xLjE2MzYzNi0yLjA5NDU0NXYtMS4xNjM2MzdBMjY4LjMzNDU0NSAyNjguMzM0NTQ1IDAgMCAwIDI4OC41ODE4MTggNTU4LjU0NTQ1NWE1NC4yMjU0NTUgNTQuMjI1NDU1IDAgMCAwIDQzLjA1NDU0NiA4Ni41NzQ1NDUgNTIuODI5MDkxIDUyLjgyOTA5MSAwIDAgMCA0MC43MjcyNzItMTguMTUyNzI3IDcuNDQ3MjczIDcuNDQ3MjczIDAgMCAwIDMuNzIzNjM3LTMuMjU4MTgyIDE1OS40MTgxODIgMTU5LjQxODE4MiAwIDAgMSAyNy4yMjkwOTEtMzYuMzA1NDU1IDE2MS4wNDcyNzMgMTYxLjA0NzI3MyAwIDAgMSAyMjkuNDY5MDkxIDAgMTU1LjIyOTA5MSAxNTUuMjI5MDkxIDAgMCAxIDIzLjI3MjcyNyAzMS40MTgxODIgNTMuMDYxODE4IDUzLjA2MTgxOCAwIDAgMCA0Ni41NDU0NTQgMjUuODMyNzI3IDUzLjk5MjcyNyA1My45OTI3MjcgMCAwIDAgNTMuNzYtNTQuNDU4MTgxIDUzLjI5NDU0NSA1My4yOTQ1NDUgMCAwIDAtNy40NDcyNzItMjYuOTk2MzY0czAuOTMwOTA5IDAgMC42OTgxODEtMC4yMzI3Mjd6IiBmaWxsPSIjMmMyYzJjIiBwLWlkPSIyMDE1Ij48L3BhdGg+PC9zdmc+';
 
-      const QH_WEB_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwNzkwNTUwMTU2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYzMjAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTg1OSA3OS4yN0gxNjVhOTAgOTAgMCAwIDAtOTAgOTB2Njk0YTkwIDkwIDAgMCAwIDkwIDkwaDY5NGE5MCA5MCAwIDAgMCA5MC05MHYtNjk0YTkwIDkwIDAgMCAwLTkwLTkweiBtLTY5MyA2MGg2OTRhMzAgMzAgMCAwIDEgMzAgMzB2MTQ1SDEzNnYtMTQ1YTMwIDMwIDAgMCAxIDMwLTMweiBtNjkzIDc1NEgxNjVhMzAgMzAgMCAwIDEtMzAtMzB2LTQ4OWg3NTR2NDg5YTMwIDMwIDAgMCAxLTMwIDMweiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMSI+PC9wYXRoPjxwYXRoIGQ9Ik0yMjMuNDcgMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMiI+PC9wYXRoPjxwYXRoIGQ9Ik0zNTMuMDggMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMyI+PC9wYXRoPjxwYXRoIGQ9Ik00ODIuNjkgMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyNCI+PC9wYXRoPjwvc3ZnPg==';
-
-      const QH_DATABASE_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwODAxMjEwNzY2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE5NDkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMiA5NmwxMi4yODggMC4wNjRDNzQ4LjczNiA5OC4xMTIgOTI4IDE1Ni44NjQgOTI4IDI1MnY1MjBDOTI4IDg2OC44NjQgNzQyLjE3NiA5MjggNTEyIDkyOFM5NiA4NjguODY0IDk2IDc3MlYyNTJDOTYgMTk5LjQ1NiAxNTAuNDY0IDE1OC4wOCAyMzcuMTIgMTMxLjE2OGwxLjkyLTAuNTc2YzQuMzg0LTEuMzQ0IDguODk2LTIuNjU2IDEzLjQ0LTMuOTM2bDMuOTM2LTEuMDg4YTU4Ni40IDU4Ni40IDAgMCAxIDE5LjI5Ni00LjkyOGM1LjQ0LTEuMjggMTEuMDA4LTIuNTYgMTYuNjQtMy43NDQgNTMuNzYtMTEuNTIgMTE1LjY4LTE4LjQ2NCAxODIuMjA4LTIwLjM1MiA4LjQ4LTAuMjU2IDE3LjAyNC0wLjQxNiAyNS42LTAuNDhoMC4xNkw1MTIgOTZ6IG0wIDU3MmMtMTQ0Ljg5NiAwLTI3Mi4yNTYtMjMuNDI0LTM0Ni42ODgtNjQuOTZ2MTY4Ljk2YzAgMTIuMDMyIDI5LjY5NiAzNC4zNjggODcuNTUyIDUyLjc2OCA2Ny4zOTIgMjEuNDQgMTYwIDMzLjkyIDI1OS4xMzYgMzMuOTIgOTkuMTM2IDAgMTkxLjc0NC0xMi40OCAyNTkuMTM2LTMzLjkyIDU3Ljg1Ni0xOC40IDg3LjUyLTQwLjczNiA4Ny41Mi01Mi43NjhsMC4wMzItMTY4Ljk2Yy03NC40MzIgNDEuNTM2LTIwMS43OTIgNjQuOTYtMzQ2LjY4OCA2NC45NnpNODU4LjY4OCAzNDMuMDRjLTc0LjQzMiA0MS41MzYtMjAxLjc5MiA2NC45Ni0zNDYuNjg4IDY0Ljk2cy0yNzIuMjU2LTIzLjQyNC0zNDYuNjg4LTY0Ljk2VjUxMmMwIDEyLjAzMiAyOS42OTYgMzQuMzY4IDg3LjU1MiA1Mi43NjggNjcuMzkyIDIxLjQ0IDE2MCAzMy45MiAyNTkuMTM2IDMzLjkyIDk5LjEzNiAwIDE5MS43NDQtMTIuNDggMjU5LjEzNi0zMy45MiA1NC45NDQtMTcuNTA0IDg0LjQ4LTM4LjUyOCA4Ny4yOTYtNTAuODhsMC4yMjQtMS44ODh6TTUxMiAxNjUuMzQ0bC0xMy4zMTIgMC4wNjRhMTE2OC45NiAxMTY4Ljk2IDAgMCAwLTExLjY0OCAwLjE5MmwxMS42NDgtMC4xOTJjLTUuNzYgMC4wNjQtMTEuNDg4IDAuMTYtMTcuMTg0IDAuMzJsNS41MzYtMC4xMjhjLTQuOTI4IDAuMDk2LTkuNzkyIDAuMjI0LTE0LjY1NiAwLjQxNmw5LjEyLTAuMjg4Yy02LjQzMiAwLjE2LTEyLjg2NCAwLjM4NC0xOS4yMzIgMC42NGwxMC4xMTItMC4zNTJjLTUuMjggMC4xNi0xMC41MjggMC4zODQtMTUuNzEyIDAuNjRsNS42LTAuMjU2Yy00Ljk5MiAwLjE5Mi05Ljk4NCAwLjQ0OC0xNC45MTIgMC43MzZsOS4yOC0wLjQ4Yy03LjUyIDAuMzItMTUuMDQgMC43NjgtMjIuNDY0IDEuMjhsMTMuMTg0LTAuOGMtNC42NCAwLjI1Ni05LjI0OCAwLjU0NC0xMy44MjQgMC44NjRsMC42NC0wLjA2NGMtNC41NzYgMC4zMi05LjEyIDAuNjQtMTMuNjMyIDEuMDI0bDEyLjk5Mi0wLjk2Yy02LjY4OCAwLjQ0OC0xMy4zMTIgMC45Ni0xOS44NzIgMS41MzZsNi44OC0wLjU3NmMtNC4yODggMC4zMi04LjU0NCAwLjcwNC0xMi44IDEuMTJsNS45Mi0wLjU0NGMtNi4wMTYgMC41MTItMTEuOTY4IDEuMDg4LTE3Ljg4OCAxLjcyOGwxMi0xLjE4NGMtNS4zNDQgMC40OC0xMC42NTYgMS4wMjQtMTUuOTA0IDEuNmwzLjkwNC0wLjQxNmMtNS4wMjQgMC41MTItOS45ODQgMS4wODgtMTQuOTEyIDEuNjY0bDExLjAwOC0xLjI4LTE2LjQ0OCAxLjk1MiA1LjQ0LTAuNjRjLTQuNDggMC41MTItOC45NiAxLjA4OC0xMy4zNzYgMS42OTZsNy45MzYtMS4wNTZjLTYuMDggMC43NjgtMTIuMDMyIDEuNi0xNy45MiAyLjQ2NGw5Ljk4NC0xLjQwOGMtNC44OTYgMC42NC05LjcyOCAxLjM0NC0xNC41MjggMi4wOGw0LjUxMi0wLjY3MmMtNC4zNTIgMC42NC04LjY0IDEuMjgtMTIuOTI4IDEuOTg0bDguNDE2LTEuMzEyYy01Ljk1MiAwLjg5Ni0xMS44NCAxLjg1Ni0xNy42NjQgMi44OGw5LjI4LTEuNTY4LTEzLjY5NiAyLjMzNiA0LjQxNi0wLjc2OGE3ODAuOCA3ODAuOCAwIDAgMC0xNC4xNzYgMi41Nmw5Ljc2LTEuNzkyYy00LjggMC44NjQtOS42IDEuNzkyLTE0LjMwNCAyLjcybDQuNTQ0LTAuODk2Yy00Ljc2OCAwLjkyOC05LjQ3MiAxLjg4OC0xNC4xMTIgMi44OGw5LjU2OC0xLjk4NGMtNC44NjQgMC45Ni05LjY2NCAxLjk4NC0xNC40IDMuMDA4bDQuODMyLTEuMDI0Yy00LjE2IDAuODY0LTguMjU2IDEuNzkyLTEyLjI4OCAyLjcybDcuNDU2LTEuNjk2Yy00LjY0IDEuMDI0LTkuMTg0IDIuMDgtMTMuNjk2IDMuMmw2LjI0LTEuNTA0Yy00LjQ0OCAxLjA1Ni04LjggMi4xMTItMTMuMTIgMy4ybDYuODgtMS42OTZjLTQuNDggMS4wODgtOC44NjQgMi4yMDgtMTMuMTg0IDMuMzZsNi4zMzYtMS42NjRjLTMuOTM2IDEuMDI0LTcuNzc2IDIuMDQ4LTExLjU1MiAzLjEwNGw1LjIxNi0xLjQ0Yy00LjM1MiAxLjE4NC04LjY0IDIuMzY4LTEyLjggMy42MTZsLTcuMTA0IDIuMTc2LTMuMzYgMS4wNTZhNDIyLjA4IDQyMi4wOCAwIDAgMC0xNi45NiA1LjgyNGw0LjM4NC0xLjYtNi40IDIuMzM2IDIuMDE2LTAuNzM2LTYuMzM2IDIuNCA0LjMyLTEuNjY0LTcuMTM2IDIuNzg0IDIuODE2LTEuMTItNi41NiAyLjYyNCAzLjc0NC0xLjUwNGMtMi40MzIgMC45Ni00Ljc2OCAxLjkyLTcuMDQgMi44OGwzLjI5Ni0xLjM3NmEzMDcuNzEyIDMwNy43MTIgMCAwIDAtNS41MDQgMi4zNjhsMi4yNC0wLjk2Yy0yLjI0IDAuOTI4LTQuMzUyIDEuODU2LTYuNCAyLjgxNmw0LjE2LTEuODU2LTYuMjA4IDIuNzg0IDIuMDQ4LTAuOTZhMjYyLjMwNCAyNjIuMzA0IDAgMCAwLTUuMjggMi40OTZsMy4yMzItMS41MzZjLTIzLjM5MiAxMC45NDQtMzcuNzYgMjEuODI0LTQyLjk0NCAzMC4xNDRhMTIuMjU2IDEyLjI1NiAwIDAgMC0yLjE3NiA2LjMzNmMwIDEyLjAzMiAyOS42NjQgMzQuMzY4IDg3LjUyIDUyLjc2OCA2Ny4zOTIgMjEuNDQgMTYwIDMzLjkyIDI1OS4xMzYgMzMuOTIgOTkuMTM2IDAgMTkxLjc0NC0xMi40OCAyNTkuMTM2LTMzLjkyIDU3Ljg1Ni0xOC40IDg3LjUyLTQwLjczNiA4Ny41Mi01Mi43NjggMC0xMi4wMzItMjkuNjY0LTM0LjM2OC04Ny41Mi01Mi43NjgtNjcuMzkyLTIxLjQ0LTE2MC0zMy45Mi0yNTkuMTM2LTMzLjkyeiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iMTk1MCI+PC9wYXRoPjwvc3ZnPg==';
-
 
 
     return `
@@ -214,55 +210,7 @@ function addToolbox () {
             </shadow>
         </value>
     </block>
-    <block type="QDP_esp32_display_samll_CN" name="显示中文">
-        <value name="QDP_display_samll_dc_colou">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_X">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_Y">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="arrayName">
-            <shadow type="text">
-                <field name="TEXT">array1</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_text">
-            <shadow type="text">
-                <field name="TEXT">中文</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_display_samll_CN_1" name="显示中文_1">
-        <value name="QDP_display_samll_dc_colou">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_X">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_Y">
-            <shadow type="math_number">
-                <field name="NUM">0</field>
-            </shadow>
-        </value>
-        <value name="QDP_display_samll_dc_text">
-            <shadow type="text">
-                <field name="TEXT">实时变量</field>
-            </shadow>
-        </value>
-    </block>
+
     <block type="QDP_esp32_display_samll_SBCDC" name="显示带底色文本">
         <value name="QDP_display_samll_sbcdc_colou2">
             <shadow type="math_number">
@@ -313,6 +261,8 @@ function addToolbox () {
     <block type="qdp_esp32_button1"></block>
     <label text="%{BKY_QH_SENSOR_LABEL}"></label>
     <block type="qdp_esp32_chaoshengbo"></block>
+    <block type="qdp_esp32_chaoshengboI2C"></block>
+    <block type="qdp_esp32_chaoshengboSerial"></block>
     <block type="qdp_esp32_grayscale"></block>
     <block type="qdp_esp32_lightSensor"></block>
     <block type="qdp_esp32_sound"></block>
@@ -417,6 +367,21 @@ function addToolbox () {
             </shadow>
         </value>
     </block>
+    <block type="rgb_esp32_led2">
+        <value name="num8">
+            <shadow type="math_number">
+                <field name="NUM">4</field>
+            </shadow>
+        </value>
+        <value name="num1">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="colour">
+            <shadow type="colour_picker"/>
+        </value>
+    </block>
     <label text="%{BKY_QH_BUZZER_LABEL}"></label>
     <block type="qdp_esp32_buzzer3" >
         <field name="PIN">4</field>
@@ -483,33 +448,6 @@ function addToolbox () {
     <block type="identification_switch"></block>
     <label text="%{BKY_QH_SYNTHESIS_LABEL}"></label>
     <block type="qdp_esp32_QF_hc_init"></block>
-    <block type="qdp_esp32_QF_hc">
-        <value name="num">
-            <shadow type="math_number">
-                <field name="NUM">8</field>
-            </shadow>
-        </value>
-        <value name="num2">
-            <shadow type="math_number">
-                <field name="NUM">5</field>
-            </shadow>
-        </value>
-        <value name="num3">
-            <shadow type="math_number">
-                <field name="NUM">5</field>
-            </shadow>
-        </value>
-        <value name="TEXT">
-            <shadow type="text">
-                <field name="TEXT">中/E/拼/不支持变量</field>
-            </shadow>
-        </value>
-        <value name="arrayName">
-            <shadow type="text">
-                <field name="TEXT">array1</field>
-            </shadow>
-        </value>
-    </block>
     <block type="qdp_esp32_QF_hc_en">
         <value name="num">
             <shadow type="math_number">
@@ -532,28 +470,6 @@ function addToolbox () {
             </shadow>
         </value>
     </block>
-    <block type="qdp_esp32_QF_hc_chinese">
-        <value name="num">
-            <shadow type="math_number">
-                <field name="NUM">8</field>
-            </shadow>
-        </value>
-        <value name="num2">
-            <shadow type="math_number">
-                <field name="NUM">5</field>
-            </shadow>
-        </value>
-        <value name="num3">
-            <shadow type="math_number">
-                <field name="NUM">5</field>
-            </shadow>
-        </value>
-        <value name="TEXT">
-            <shadow type="text">
-                <field name="TEXT">实时变量</field>
-            </shadow>
-        </value>
-    </block>
     <block type="qdp_esp32_QF_sound">
         <value name="num1">
             <shadow type="math_number">
@@ -562,6 +478,7 @@ function addToolbox () {
         </value>
     </block>
     <block type="qdp_esp32_QF_stophc"></block>
+    <label text="%{BKY_QH_RECOGNITION_LABEL}"></label>
     <block type="qdp_esp32_QF_startstopsb"></block>
     <block type="qdp_esp32_QF_sbjg">
         <value name="TEXT">
@@ -1083,6 +1000,50 @@ function addToolbox () {
             </shadow>
         </value>
     </block>
+    <label text="------"></label>
+    <block type="tool_modulus">
+        <field name="modulus_way">2</field>
+        <field name="modulus_direction">2</field>
+        <value name="hz_line_height">
+            <shadow type="text">
+              <field name="TEXT">16</field>
+            </shadow>
+        </value>
+        <value name="bitmap_width">
+            <shadow type="text">
+              <field name="TEXT">128</field>
+            </shadow>
+        </value>
+        <value name="bitmap_height">
+            <shadow type="text">
+              <field name="TEXT">64</field>
+            </shadow>
+        </value>
+        <value name="input_data">
+            <shadow type="text">
+              <field name="TEXT">齐护机器人</field>
+            </shadow>
+        </value>        
+    </block>
+    <block type="esp32_oled_page"></block>
+    <block type="esp32_oled_print">
+        <value name="POS_X">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="POS_Y">
+            <shadow type="math_number">
+                <field name="NUM">20</field>
+            </shadow>
+        </value>
+        <value name="TEXT">
+            <shadow type="text">
+                <field name="TEXT">1234</field>
+            </shadow>
+        </value>
+    </block>
+
 </category>
 <category name="%{BKY_QH_LCD_CATEGORY}" id="QH_LCD_CATEGORY" colour="#42CCFF" secondaryColour="#42CCFF" iconURI="${QH_LCD_ICO}">
 	<block type="group_lcd_init2">
@@ -1452,185 +1413,6 @@ function addToolbox () {
 	</block>
 <block type="NTP_server_get_time"></block>
 </category>
-<category name="%{BKY_QH_WEB_CATEGORY}" id="QH_WEB_CATEGORY" colour="#42CCFF" secondaryColour="#42CCFF" iconURI="${QH_WEB_ICO}">
-	<block type="QDP_esp32_web_page_init">
-        <statement name="DO">
-            <block type="QDP_make_arduino_comment_text_1">
-                <field name="data">要插入的网页元素放置在这里</field>
-            </block>
-        </statement>
-    </block>
-    <block type="QDP_esp32_web_page_add">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="name">
-            <shadow type="text">
-                <field name="TEXT">displayName</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_addTemperatureCard">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="name">
-            <shadow type="text">
-                <field name="TEXT">displayName</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_addSliderCard">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="name">
-            <shadow type="text">
-                <field name="TEXT">displayName</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_attachSliderChanged"></block>
-    <block type="QDP_esp32_web_page_SliderChanged" ></block>
-    <block type="QDP_esp32_web_page_Slider_id" >
-    	<value name="id">
-            <shadow type="text">
-                <field name="TEXT">1</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_attachButtonClick"></block>
-    <block type="QDP_esp32_web_page_ButtonClick" ></block>
-    <block type="QDP_esp32_web_page_Button_id" >
-    	<value name="id">
-            <shadow type="text">
-                <field name="TEXT">1</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_addLineChart">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="name">
-            <shadow type="text">
-                <field name="TEXT">displayName</field>
-            </shadow>
-        </value>
-        <value name="y_axis_name">
-            <shadow type="text">
-                <field name="TEXT">Power KwH</field>
-            </shadow>
-        </value>
-        <value name="x_axis_value">
-            <shadow type="text">
-                <field name="TEXT">x_axis</field>
-            </shadow>
-        </value>
-        <value name="y_axis_value">
-            <shadow type="text">
-                <field name="TEXT">y_axis</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_updateLineChart">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="x_axis_value">
-            <shadow type="text">
-                <field name="TEXT">x_axis</field>
-            </shadow>
-        </value>
-        <value name="y_axis_value">
-            <shadow type="text">
-                <field name="TEXT">y_axis</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_esp32_web_page_update">
-        <value name="id">
-            <shadow type="math_number">
-                <field name="NUM">1</field>
-            </shadow>
-        </value>
-        <value name="value">
-            <shadow type="text">
-                <field name="TEXT">1</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_print_data_32">
-        <value name="web_printing">
-            <shadow type="text">
-                <field name="TEXT">0</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_receive_data_32">
-        <statement name="data">
-            <block type="serial_println">
-                <field name="serial_select">Serial</field>
-                <value name="CONTENT">
-                    <block type="variables_get">
-                        <field name="VAR">web_data</field>
-                    </block>
-                </value>
-            </block>
-        </statement>
-    </block>
-</category>
-<category name="%{BKY_QH_DATABASE_CATEGORY}" id="QH_DATABASE_CATEGORY" colour="#42CCFF" secondaryColour="#42CCFF" iconURI="${QH_DATABASE_ICO}">
-	<block type="QDP_network_microdatabase_initialization">
-        <value name="ssid">
-            <shadow type="text">
-                <field name="TEXT">share</field>
-            </shadow>
-        </value>
-        <value name="pass">
-            <shadow type="text">
-                <field name="TEXT">everyone</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_microdatabase_update_tags">
-        <value name="tag">
-            <shadow type="text">
-                <field name="TEXT">tag</field>
-            </shadow>
-        </value>
-        <value name="value">
-            <shadow type="text">
-                <field name="TEXT">123</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_microdatabase_delete_tags">
-        <value name="tag">
-            <shadow type="text">
-                <field name="TEXT">tag</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_microdatabase_get_tags">
-        <value name="tag">
-            <shadow type="text">
-                <field name="TEXT">tag</field>
-            </shadow>
-        </value>
-    </block>
-    <block type="QDP_web_microdatabase_count_tags"></block>
-</category>
 <category name="%{BKY_QH_OTHER_CATEGORY}" id="QH_OTHER_CATEGORY" colour="#42CCFF" secondaryColour="#42CCFF" iconURI="${QH_OTHER_ICO}">
 <label text="%{BKY_QH_ANNOTATION_LABEL}"></label>
     <block type="qdp_annotation1">
@@ -1676,6 +1458,20 @@ function addToolbox () {
         <value name="VAR">
             <shadow type="text">
                 <field name="TEXT">item</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="QH_string">
+        <value name="VAR">
+            <shadow type="text">
+                <field name="TEXT">text</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="QH_char">
+        <value name="VAR">
+            <shadow type="text">
+                <field name="TEXT">text</field>
             </shadow>
         </value>
     </block>
@@ -1785,6 +1581,20 @@ function addToolbox () {
         <value name="MAX2">
             <shadow type="math_number">
                 <field name="NUM">200</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="utf8togbk">
+        <value name="data">
+            <shadow type="text">
+                <field name="TEXT">item</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="type_conversion">
+        <value name="variable">
+            <shadow type="text">
+                <field name="TEXT">sub_sting</field>
             </shadow>
         </value>
     </block>

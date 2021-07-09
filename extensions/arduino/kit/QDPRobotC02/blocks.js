@@ -5,6 +5,7 @@ function addBlocks (Blockly) {
     const color = '#42CCFF';
     const color_screen = '#a5855b';
     const color_c02_serson = '#27b6ac';
+    const color_c02_serson2 = '#a5675b';
     const QH_Actuator_color = '#AE8F00';
     const QH_SPEECH_color1 = '#ae8f00';
     const QH_SPEECH_color2 = '#5ba5a5';
@@ -23,8 +24,6 @@ function addBlocks (Blockly) {
     const QH_OTHER_COLOR = '#808080';
     const QH_STORAGE_COLOR  = '#808080';
     const QH_WIFI_COLOR  = '#7b68ee';
-    const QH_WEB_COLOR = '#7b68ee';
-    const QH_DATABASE_COLOR = '#5b67a5'
 
     const xxqrIconUrl = 'data:image/png;base64,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';
 
@@ -34,6 +33,8 @@ function addBlocks (Blockly) {
     const QH_C02_TOUCH_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwNjA2MzQwODkyIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjY3OSIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNNDM5LjA0IDE5Ni40OGMxMC4yNCAwIDE3LjkyIDguMzIgMTcuOTIgMTcuOTJ2MjA2LjcyYzAgMTAuODggOC4zMiAxOS44NCAxOS4yIDE5Ljg0czE5LjItOC45NiAxOS4yLTE5Ljg0di00OGMwLTEwLjg4IDguOTYtMTkuMiAxOS4yLTE5LjIgMTAuODggMCAxOS4yIDguOTYgMTkuMiAxOS4ydjYyLjcyYzAgMTEuNTIgOC45NiAyMS4xMiAxOS44NCAyMS4xMiAxMC44OCAwIDE5Ljg0LTguOTYgMTkuODQtMjEuMTJWMzkwLjRjMC05LjYgNy42OC0xNi42NCAxNi42NC0xNi42NCA5LjYgMCAxNi42NCA3LjY4IDE2LjY0IDE2LjY0djYwLjhjMCAxMC44OCA4LjMyIDE5Ljg0IDE5LjIgMTkuODRzMTkuMi04Ljk2IDE5LjItMTkuODR2LTE0LjcyYzAtOC4zMiA3LjA0LTE1LjM2IDE1LjM2LTE1LjM2IDguOTYgMCAxNiA3LjA0IDE2IDE1LjM2djE2Ny4wNGMtMC42NCAxLjI4LTAuNjQgMy4yLTAuNjQgNS4xMnY1LjEyYzAgMzkuNjgtNy42OCA3OC43Mi0yMy42OCAxMTUuMmwtMjMuMDQgNTQuNGMtMC42NCAxLjkyLTEuMjggMy44NC0xLjI4IDUuNzZ2NjIuMDhoLTE5OC40di02Mi4wOGMwLTIuNTYtMC42NC01LjEyLTEuOTItNy42OGwtODkuNi0xNTAuNC0wLjY0LTEuMjhjLTguMzItMTYtMTcuMjgtMzMuOTItMTcuMjgtNDkuMjhWNTU0LjI0YzAtMTEuNTIgMC42NC0yMy42OCAxLjkyLTM1LjIgNC40OC00NC4xNiA0LjQ4LTUwLjU2IDQuNDgtNTIuNDggMC0zNi40OCA0LjQ4LTU0LjQgMTMuNDQtNTQuNCAxNi42NCAwIDMwLjcyIDI1LjYgMzAuNzIgNDYuMDh2NzguNzJjMCAxNS4zNiAxMC44OCAyNi44OCAyNS42IDI2Ljg4czI1LjYtMTEuNTIgMjUuNi0yNi44OFYyMTUuMDRjLTEuMjgtMTAuMjQgNy4wNC0xOC41NiAxNy4yOC0xOC41Nm0wLTE0LjcyYy0xOC41NiAwLTMzLjI4IDE0LjcyLTMzLjI4IDMzLjI4djMyMS4yOGMwIDcuNjgtNS4xMiAxMS41Mi0xMC4yNCAxMS41MnMtMTAuMjQtMy44NC0xMC4yNC0xMS41MlY0NTcuNmMwLTI4LjE2LTE5LjItNjEuNDQtNDUuNDQtNjEuNDRzLTI4LjE2IDM4LjQtMjguMTYgNjkuNzZjMCA2LjQtMi41NiAzMi42NC00LjQ4IDUxLjItMS4yOCAxMi4xNi0xLjkyIDI0LjMyLTEuOTIgMzYuNDhWNTc5Ljg0YzAgMTkuODQgMTAuODggNDAuMzIgMTkuODQgNTguMjRsOTAuMjQgMTUwLjR2NzYuOGgyMzAuNHYtNzYuOGwyMy4wNC01NC40YzE2LjY0LTM4LjQgMjQuOTYtNzkuMzYgMjQuOTYtMTIwLjk2VjYwOGgwLjY0VjQzNi40OGMwLTE3LjI4LTE0LjA4LTMwLjcyLTMwLjcyLTMwLjcyLTE3LjI4IDAtMzAuNzIgMTQuMDgtMzAuNzIgMzAuNzJ2MTQuNzJjMCAzLjItMS45MiA1LjEyLTQuNDggNS4xMi0xLjkyIDAtNC40OC0xLjkyLTQuNDgtNS4xMlYzOTAuNGMwLTE3LjkyLTE0LjA4LTMyLTMyLTMycy0zMiAxNC4wOC0zMiAzMnY0Ni4wOGMwIDMuODQtMi41NiA1Ljc2LTQuNDggNS43Ni0yLjU2IDAtNC40OC0xLjkyLTQuNDgtNS43NnYtNjIuNzJjMC0xOS4yLTE1LjM2LTM0LjU2LTM0LjU2LTM0LjU2LTE5LjIgMC0zNC41NiAxNS4zNi0zNC41NiAzNC41NnY0OGMwIDMuMi0xLjkyIDUuMTItNC40OCA1LjEycy00LjQ4LTEuOTItNC40OC01LjEyVjIxNS4wNGMtMC42NC0xOC41Ni0xNi0zMy4yOC0zMy45Mi0zMy4yOHoiIGZpbGw9IiMyMTFEMUMiIHAtaWQ9IjY4MCI+PC9wYXRoPjxwYXRoIGQ9Ik02NTQuMDggODY1LjkydjEzNS4wNEg0MDUuMTJ2LTEzNS4wNGgyNDguOTZtMC0xNS4zNkg0MDUuMTJjLTguMzIgMC0xNS4zNiA3LjA0LTE1LjM2IDE1LjM2djEzNS4wNGMwIDguMzIgNy4wNCAxNS4zNiAxNS4zNiAxNS4zNmgyNDguOTZjOC4zMiAwIDE1LjM2LTcuMDQgMTUuMzYtMTUuMzZ2LTEzNS4wNGMwLTguMzItNy4wNC0xNS4zNi0xNS4zNi0xNS4zNnoiIGZpbGw9IiMyMTFEMUMiIHAtaWQ9IjY4MSI+PC9wYXRoPjxwYXRoIGQ9Ik00OTcuMjggMjUwLjI0Yy0xLjI4IDAtMS45MiAwLTMuMi0wLjY0LTMuODQtMS45Mi01Ljc2LTYuNC0zLjg0LTEwLjI0IDMuMi03LjA0IDQuNDgtMTQuMDggNC40OC0yMS43NiAwLTMwLjcyLTI0Ljk2LTU2LjMyLTU2LjMyLTU2LjMyLTMwLjcyIDAtNTYuMzIgMjQuOTYtNTYuMzIgNTYuMzIgMCA3LjY4IDEuMjggMTQuNzIgNC40OCAyMS43NiAxLjkyIDMuODQgMCA4LjMyLTMuODQgMTAuMjQtMy44NCAxLjkyLTguMzIgMC0xMC4yNC0zLjg0LTMuODQtOC45Ni01Ljc2LTE3LjkyLTUuNzYtMjguMTYgMC0zOS4wNCAzMi03MS4wNCA3MS4wNC03MS4wNHM3MS4wNCAzMiA3MS4wNCA3MS4wNGMwIDkuNi0xLjkyIDE5LjItNS43NiAyOC4xNiAwIDIuNTYtMi41NiA0LjQ4LTUuNzYgNC40OHpNNDM5LjA0IDg3LjA0Yy00LjQ4IDAtNy42OC0zLjItNy42OC03LjY4VjE2YzAtNC40OCAzLjItNy42OCA3LjY4LTcuNjhzNy42OCAzLjIgNy42OCA3LjY4djYzLjM2YzAgNC40OC0zLjg0IDcuNjgtNy42OCA3LjY4ek00OTcuMjggOTkuODRjLTEuMjggMC0xLjkyIDAtMy4yLTAuNjQtMy44NC0xLjkyLTUuMTItNi40LTMuODQtMTAuMjRsMjYuODgtNTcuNmMxLjkyLTMuODQgNi40LTUuMTIgMTAuMjQtMy44NCAzLjg0IDEuOTIgNS4xMiA2LjQgMy44NCAxMC4yNGwtMjYuODggNTcuNmMtMS45MiAzLjItNC40OCA0LjQ4LTcuMDQgNC40OHpNNTQ0LjY0IDEzNi4zMmMtMS45MiAwLTQuNDgtMC42NC01Ljc2LTIuNTYtMi41Ni0zLjItMi41Ni03LjY4IDAuNjQtMTAuODhsNDguNjQtNDAuOTZjMy4yLTIuNTYgNy42OC0yLjU2IDEwLjg4IDAuNjQgMi41NiAzLjIgMi41NiA3LjY4LTAuNjQgMTAuODhMNTQ5LjEyIDEzNC40Yy0xLjI4IDEuMjgtMy4yIDEuOTItNC40OCAxLjkyek01NzIuMTYgMTg5LjQ0Yy0zLjIgMC02LjQtMS45Mi03LjA0LTUuNzYtMS4yOC0zLjg0IDEuMjgtOC4zMiA1LjEyLTguOTZsNjEuNDQtMTYuNjRjMy44NC0xLjI4IDguMzIgMS4yOCA4Ljk2IDUuMTIgMS4yOCAzLjg0LTEuMjggOC4zMi01LjEyIDguOTZsLTYxLjQ0IDE2LjY0Yy0wLjY0IDAuNjQtMS4yOCAwLjY0LTEuOTIgMC42NHpNMjQ0LjQ4IDI3Ny4xMmMtMy4yIDAtNi40LTEuOTItNy4wNC01Ljc2LTEuMjgtMy44NCAxLjI4LTguMzIgNS4xMi04Ljk2bDYxLjQ0LTE2LjY0YzMuODQtMS4yOCA4LjMyIDEuMjggOC45NiA1LjEyIDEuMjggMy44NC0xLjI4IDguMzItNS4xMiA4Ljk2bC02MS40NCAxNi42NGMtMC42NCAwLjY0LTEuMjggMC42NC0xLjkyIDAuNjR6TTM4MC44IDk5Ljg0Yy0yLjU2IDAtNS43Ni0xLjkyLTcuMDQtNC40OGwtMjYuODgtNTcuNmMtMS45Mi0zLjg0IDAtOC4zMiAzLjg0LTEwLjI0IDMuODQtMS45MiA4LjMyIDAgMTAuMjQgMy44NGwyNi44OCA1Ny42YzEuOTIgMy44NCAwIDguMzItMy44NCAxMC4yNC0xLjI4IDAuNjQtMi41NiAwLjY0LTMuMiAwLjY0ek0zMzMuNDQgMTM2LjMyYy0xLjkyIDAtMy4yLTAuNjQtNS4xMi0xLjkybC00OC42NC00MC45NmMtMy4yLTIuNTYtMy44NC03LjY4LTAuNjQtMTAuODggMi41Ni0zLjIgNy42OC0zLjg0IDEwLjg4LTAuNjRsNDguNjQgNDAuOTZjMy4yIDIuNTYgMy44NCA3LjY4IDAuNjQgMTAuODgtMS45MiAxLjkyLTMuODQgMi41Ni01Ljc2IDIuNTZ6TTMwNS45MiAxODkuNDRoLTEuOTJMMjQxLjkyIDE3Mi44Yy0zLjg0LTEuMjgtNi40LTUuMTItNS4xMi04Ljk2IDEuMjgtMy44NCA1LjEyLTYuNCA4Ljk2LTUuMTJsNjEuNDQgMTYuNjRjMy44NCAxLjI4IDYuNCA1LjEyIDUuMTIgOC45NiAwIDIuNTYtMy4yIDUuMTItNi40IDUuMTJ6TTYzMy42IDI3Ny4xMmgtMS45MmwtNjEuNDQtMTYuNjRjLTMuODQtMS4yOC02LjQtNS4xMi01LjEyLTguOTYgMS4yOC0zLjg0IDUuMTItNi40IDguOTYtNS4xMmw2MS40NCAxNi42NGMzLjg0IDEuMjggNi40IDUuMTIgNS4xMiA4Ljk2LTAuNjQgMy4yLTMuODQgNS4xMi03LjA0IDUuMTJ6IiBmaWxsPSIjMDBBQkUwIiBwLWlkPSI2ODIiPjwvcGF0aD48L3N2Zz4='
 
     const QH_Button_ICO ='data:image/png;base64,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';
+
+    const QH_UltraSonicDistanceSensor_ICO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAAxUlEQVR4nO3bQQqDMBRAwW/p/a/cnsDUReWVZmarkcAjoFFnAAAAAAAAAACAf3PMzKuexM4e9QR2J0BMgJgAMQFiz8Wx48L4szuos7G7nf9xrBUQEyAmQEyAmAAxAWICxASICRATICZAbLUXdIcreyZbXd8KiAkQEyAmQEyAmAAxAWICxFafJt79ULMbL+V/kQAxAWICxASICRATICZATICYADEBYgLEBIgJEPOnfMwKiAkQEyAmQEwAAAAAAAAAAACAL3sDIYsLYoVi4i4AAAAASUVORK5CYII=';
 
     const QH_Line_follower_ICO = 'data:image/png;base64,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';
 
@@ -148,10 +149,6 @@ function addBlocks (Blockly) {
    const QH_SMARTCONFIG_ICO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAABfklEQVR42u3aWw6DMAwEwN7/0u0JkBrFGxuYfCLKY5ASO9vPJzC+F2P1t6vXXL3XiAELFqzyl/xn7Fxn2vP8hQ4LFqxRWOnJeGdxqDq+5QALFqxHYq1eP13QwoIFC9aJCbiqKIUFC9YzsRKNa9Wk/opdB1iwYLXs5U84fpt0BxYsWNGscNoiEH9+WLBgtWNVFX47TWmiAU4XurBgwerB6vqjR+LDVAUfl88MCxasUViJybLqnERxW5bowIIFqx0rAZoIL9JFKSxYsGZhJQq8k+encwZYsGDNxToZBFSFo23PBgsWrFFYJzfeEoFI1fGju4uwYME6hhVPfQ829lspNCxYsFqw0kXj0cm4CB0WLFj9WN/wSDTDVQsILFiw7oeVGImCNr0gHAWCBQtWCdbkACLdSC8vLLBgwRqFle7aq164bYGCBQvW47ESReNOs10WssKCBeu1WFVNb7yohgUL1iisxM2qJvjExx63+QcLFqz2wKIqiE039rBgwRqL9QMi+YmYDjUTWwAAAABJRU5ErkJggg=='
 
    const QH_WEATHER_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwNzg3NTg3NjIxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIxMjkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTI4MS41ODMxNjcgMTYxLjAyNTQxN2MzLjE1NjkgNy43NzMwMzQgMTAuNjQzNDA4IDEyLjQ4NTM1OSAxOC41NDUzNzggMTIuNDg1MzU5IDIuNTA3MSAwIDUuMDU3MTc5LTAuNDczNzkxIDcuNTIyMzI0LTEuNDc1NjA4IDEwLjIzOTIwMi00LjE1NzY5MyAxNS4xNjc0NDQtMTUuODI5NTI0IDExLjAwOTc1MS0yNi4wNjc3MDJsLTI2LjUzMjI4My02NS4zMjc4NjhjLTQuMTU4NzE2LTEwLjI0MDIyNS0xNS44MzE1Ny0xNS4xNjc0NDQtMjYuMDY3NzAyLTExLjAwOTc1MS0xMC4yMzkyMDIgNC4xNTc2OTMtMTUuMTY3NDQ0IDE1LjgyOTUyNC0xMS4wMDk3NTEgMjYuMDY3NzAyTDI4MS41ODMxNjcgMTYxLjAyNTQxN3pNNzguNTUxMDMgMjkwLjE3MDc1Mmw2NC45NTQzNjEgMjcuNDMxNzY5YzIuNTQxODkzIDEuMDczNDQ4IDUuMTc5OTc2IDEuNTgyMDMxIDcuNzc2MTA0IDEuNTgyMDMxIDcuODAxNjg2IDAgMTUuMjE1NTQtNC41OTA1NTIgMTguNDQxMDAxLTEyLjIyOTUzMiA0LjI5OTkzMy0xMC4xNzk4NS0wLjQ2NzY1MS0yMS45MTgxOTUtMTAuNjQ3NTAxLTI2LjIxNzEwNWwtNjQuOTU0MzYxLTI3LjQzMTc2OWMtMTAuMTc5ODUtNC4yOTg5MDktMjEuOTE5MjE5IDAuNDY2NjI4LTI2LjIxNzEwNSAxMC42NDc1MDFDNjMuNjAzNTk3IDI3NC4xMzQ1MjEgNjguMzcxMTggMjg1Ljg3MTg0MyA3OC41NTEwMyAyOTAuMTcwNzUyek0xNTcuMzkzNzAzIDUyNC4wNDUzMzdjMTAuMjM5MjAyLTQuMTU3NjkzIDE1LjE2NzQ0NC0xNS44Mjc0NzcgMTEuMDA5NzUxLTI2LjA2NjY3OS00LjE1ODcxNi0xMC4yMzkyMDItMTUuODI5NTI0LTE1LjE3MjU2MS0yNi4wNjc3MDItMTEuMDA4NzI4TDc3LjAwNzg4NSA1MTMuNTAyMjEzYy0xMC4yMzkyMDIgNC4xNTc2OTMtMTUuMTY3NDQ0IDE1LjgyNzQ3Ny0xMS4wMDk3NTEgMjYuMDY2Njc5IDMuMTU2OSA3Ljc3MzAzNCAxMC42NDM0MDggMTIuNDg2MzgyIDE4LjU0NTM3OCAxMi40ODYzODIgMi41MDcxIDAgNS4wNTYxNTYtMC40NzQ4MTQgNy41MjIzMjQtMS40Nzc2NTRMMTU3LjM5MzcwMyA1MjQuMDQ1MzM3ek02NTEuMzU5OTc4IDMyMS44NDcxOTZjMi41MDcxIDAgNS4wNTYxNTYtMC40NzM3OTEgNy41MjIzMjQtMS40NzU2MDhsNjMuNDA2MDk5LTI1Ljc1MTVjMTAuMjM5MjAyLTQuMTU3NjkzIDE1LjE2NzQ0NC0xNS44Mjk1MjQgMTEuMDA5NzUxLTI2LjA2NzcwMi00LjE1NzY5My0xMC4yNDAyMjUtMTUuODI5NTI0LTE1LjE2NzQ0NC0yNi4wNjc3MDItMTEuMDA5NzUxbC02My40MDYwOTkgMjUuNzUxNWMtMTAuMjM5MjAyIDQuMTU3NjkzLTE1LjE2NzQ0NCAxNS44Mjk1MjQtMTEuMDA5NzUxIDI2LjA2NzcwMkM2MzUuOTcxNDk5IDMxNy4xMzQ4NzEgNjQzLjQ1ODAwNyAzMjEuODQ3MTk2IDY1MS4zNTk5NzggMzIxLjg0NzE5NnpNNDk2Ljc1MjczOCAxNzQuMTM2MDE2YzIuNTQxODkzIDEuMDczNDQ4IDUuMTc5OTc2IDEuNTgyMDMxIDcuNzc2MTA0IDEuNTgyMDMxIDcuODAxNjg2IDAgMTUuMjE1NTQtNC41OTA1NTIgMTguNDQxMDAxLTEyLjIyOTUzMmwyNy40MzI3OTMtNjQuOTU1Mzg0YzQuMjk5OTMzLTEwLjE3OTg1LTAuNDY2NjI4LTIxLjkxODE5NS0xMC42NDc1MDEtMjYuMjE3MTA1LTEwLjE4MjkyLTQuMjk4OTA5LTIxLjkxOTIxOSAwLjQ2NjYyOC0yNi4yMTcxMDUgMTAuNjQ3NTAxbC0yNy40MzI3OTMgNjQuOTU1Mzg0QzQ4MS44MDUzMDQgMTU4LjA5ODc2MSA0ODYuNTcyODg4IDE2OS44MzcxMDYgNDk2Ljc1MjczOCAxNzQuMTM2MDE2ek05MTYuNjc0NjIzIDY5My43NDIyNTFjLTIzLjkzODIwMi0yNC40MzQ1MDUtNTQuNjc1MjUtNDAuMDUzMjI4LTg4LjAyNTgyMi00NS4wMjk1NjYtNy4wMDM1MDgtMTIyLjU1MjE3NC0xMDYuNjQ3OTQ5LTIyMC42OTU0MjUtMjI5LjgzNjYxOS0yMjUuNDIxMDUzIDAuNDk2MzA0LTUuNzYyMjM3IDAuNzYxMzQtMTEuNTUyMTA0IDAuNzYxMzQtMTcuMzQ1MDQgMC0xMTAuMTc5Mzc4LTg5LjYzNzUzLTE5OS44MTU4ODUtMTk5LjgxNjkwOC0xOTkuODE1ODg1cy0xOTkuODE1ODg1IDg5LjYzNjUwNi0xOTkuODE1ODg1IDE5OS44MTU4ODVjMCA1Ni4yNjIzOTggMjIuOTY3MDg0IDEwOC4zMTY5NjEgNjIuOTExODQyIDE0NS42NDUxMjUtMzMuOTg1MDIyIDE4LjIwMDUyNC01Ny4xNTc3OTEgNTQuMDU5MjItNTcuMTU3NzkxIDk1LjIzMTk0NSAwIDEuNjc2MTc2IDAuMDM4ODg2IDMuMzU1NDIxIDAuMTE4NzA0IDUuMDMxNTk3LTY2LjQxOTczNSAxOC4xNjI2NjItMTE0LjM2MjY1NCA3OS4zOTExNjUtMTE0LjM2MjY1NCAxNDkuODUxOTM2IDAgODUuNjUzNzk5IDY5Ljc0NTQ4MSAxNTUuMzM4OTA0IDE1NS40NzUwMDQgMTU1LjMzODkwNGw1NTkuMTg0NjQ5IDBjNDAuODUyNDMgMCA3OS41Mzc0OTgtMTYuMDc5MjEgMTA4LjkyNzg3NS00NS4yNzgyMjkgMjkuNTkwOTQ1LTI5LjM5NzU0IDQ1Ljg4OTE0My02OC4zNTI3NjEgNDUuODg5MTQzLTEwOS42ODcxNjhDOTYwLjkyODUyMiA3NjEuMzQ2OTc1IDk0NS4yMTI1ODYgNzIyLjg3MjcwOCA5MTYuNjc0NjIzIDY5My43NDIyNTF6TTIzOS45NTkxNjQgNDA1Ljk0NTU2OWMwLTg4LjExMjgwNCA3MS42ODU2NjktMTU5Ljc5NzQ0OSAxNTkuNzk3NDQ5LTE1OS43OTc0NDkgODguMTEzODI3IDAgMTU5Ljc5ODQ3MyA3MS42ODU2NjkgMTU5Ljc5ODQ3MyAxNTkuNzk3NDQ5IDAgNi40MTkyLTAuMzk0OTk2IDEyLjgzMDIxMy0xLjE1MjI0MyAxOS4xNzY3NTgtNzkuNTkxNzMzIDEwLjM5NDc0NC0xNDguOTE3NjU4IDYwLjE3MTQyOC0xODQuMTQwODggMTMyLjMzMjkzNC0xNy42Njk0MjgtMTIuMDExNTY4LTM4LjY3MTc2NS0xOC41ODQyNjQtNjAuNjE4NjEzLTE4LjU4NDI2NC0wLjg1MDM2NyAwLTEuNjk2NjQyIDAuMDEyMjgtMi41NDE4OTMgMC4wMzI3NDZDMjY2LjQyNjk3OSA1MDkuMTM5ODU5IDIzOS45NTkxNjQgNDU5Ljk2MjgzMyAyMzkuOTU5MTY0IDQwNS45NDU1Njl6TTg4Ni44MzUwMTQgODgzLjM3ODI4NmMtMjEuODQxNDQ3IDIxLjY5OTIwOC01MC41MTAzOTQgMzMuNjQ5Mzc4LTgwLjcyMzUwOSAzMy42NDkzNzhMMjQ2LjkyNjg1NiA5MTcuMDI3NjYzYy02My42NjI5NDkgMC0xMTUuNDU2NTY4LTUxLjczMjIyMi0xMTUuNDU2NTY4LTExNS4zMjA0NjkgMC01Ny4zNDYwNzkgNDIuNzU2ODAzLTEwNi40NTE0NzQgOTkuNDU1MTI5LTExNC4yMjQ1MDggNS42MDk3NjUtMC43Njc0OCAxMC42MzExMjgtMy44NzgzMyAxMy44MTg3MjctOC41NTg5MzMgMy4xODc1OTktNC42Nzk1NzkgNC4yNDI2MjctMTAuNDkwOTM1IDIuOTA1MTY2LTE1Ljk5MzI1My0xLjI4NDI0OS01LjI3OTIzNy0xLjkzNTA3Mi0xMC42OTk2OS0xLjkzNTA3Mi0xNi4xMDY4NCAwLTM0LjA3NjA5NiAyNS4yMTgzNTgtNjIuMzYzMzUgNTcuOTY5MjczLTY3LjE5NzQ0OCAxLjAxMDAwMyAwLjE1NTU0MyAyLjAyNTEyMyAwLjI0MTUgMy4wMzYxNDkgMC4yNDE1IDIuMDgxNDA1IDAgNC4xNDY0MzctMC4zMjc0NTggNi4xMTkzNzEtMC45NTg4MzggMC4yNjkxMy0wLjAwMzA3IDAuNTM1MTg5LTAuMDIwNDY2IDAuODA1MzQyLTAuMDIwNDY2IDIwLjUyMzQyOSAwIDM5LjczNjAwMyA5LjEzNTA1NCA1Mi43MTA1MDIgMjUuMDYzODM5IDQuNTg4NTA1IDUuNjMzMzAxIDExLjg3NTQ2OCA4LjMzNzg5OSAxOS4wMjYzMzIgNy4wNjE4MzYgNy4xNTQ5NTctMS4yNzYwNjMgMTMuMDU0MzE3LTYuMzI5MTQ5IDE1LjQxMzAzOC0xMy4yMDI2OTcgMjcuNjQ4NzEtODAuNTY2OTQ0IDEwMy40OTAwMjYtMTM0LjY5ODgxOCAxODguNzIwMTc2LTEzNC42OTg4MTggMTEwLjAxMDUzMyAwIDE5OS41MDk5MTYgODkuNDU2NDA1IDE5OS41MDk5MTYgMTk5LjQwOTYzMiAwIDAuODM4MDg4IDAuMDE5NDQzIDEuNjU2NzMzIDAuMDQwOTMyIDIuNDcyMzA4IDAuMDEzMzAzIDAuNTQ1NDIyIDAuMDM0NzkyIDEuMDg4Nzk4IDAuMDIzNTM2IDEuNjQ3NTIzLTAuMjI0MTA0IDEwLjk5NzQ3MiA4LjQ3MDkyOSAyMC4xMTQxMDcgMTkuNDY1MzMxIDIwLjQwOTg0MiAzMC4xNjYwNDMgMC44MTI1MDUgNTguNDExMzQxIDEzLjEzNTE1OCA3OS41MzM0MDQgMzQuNjk3MjQzIDIxLjE2NjA2NSAyMS42MDUwNjQgMzIuODIzNTcgNTAuMTMzODE3IDMyLjgyMzU3IDgwLjMzMjYwNkM5MjAuOTExMTEgODMyLjY3NTUxIDkwOC44MDk0OTEgODYxLjU0ODA5NCA4ODYuODM1MDE0IDg4My4zNzgyODZ6IiBwLWlkPSIyMTMwIj48L3BhdGg+PC9zdmc+';
-
-   const QH_WEB_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwNzkwNTUwMTU2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjYzMjAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTg1OSA3OS4yN0gxNjVhOTAgOTAgMCAwIDAtOTAgOTB2Njk0YTkwIDkwIDAgMCAwIDkwIDkwaDY5NGE5MCA5MCAwIDAgMCA5MC05MHYtNjk0YTkwIDkwIDAgMCAwLTkwLTkweiBtLTY5MyA2MGg2OTRhMzAgMzAgMCAwIDEgMzAgMzB2MTQ1SDEzNnYtMTQ1YTMwIDMwIDAgMCAxIDMwLTMweiBtNjkzIDc1NEgxNjVhMzAgMzAgMCAwIDEtMzAtMzB2LTQ4OWg3NTR2NDg5YTMwIDMwIDAgMCAxLTMwIDMweiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMSI+PC9wYXRoPjxwYXRoIGQ9Ik0yMjMuNDcgMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMiI+PC9wYXRoPjxwYXRoIGQ9Ik0zNTMuMDggMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyMyI+PC9wYXRoPjxwYXRoIGQ9Ik00ODIuNjkgMjI3Ljk4bS01MCAwYTUwIDUwIDAgMSAwIDEwMCAwIDUwIDUwIDAgMSAwLTEwMCAwWiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNjMyNCI+PC9wYXRoPjwvc3ZnPg==';
-
-   const QH_DATABASE_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwODAxMjEwNzY2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE5NDkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMiA5NmwxMi4yODggMC4wNjRDNzQ4LjczNiA5OC4xMTIgOTI4IDE1Ni44NjQgOTI4IDI1MnY1MjBDOTI4IDg2OC44NjQgNzQyLjE3NiA5MjggNTEyIDkyOFM5NiA4NjguODY0IDk2IDc3MlYyNTJDOTYgMTk5LjQ1NiAxNTAuNDY0IDE1OC4wOCAyMzcuMTIgMTMxLjE2OGwxLjkyLTAuNTc2YzQuMzg0LTEuMzQ0IDguODk2LTIuNjU2IDEzLjQ0LTMuOTM2bDMuOTM2LTEuMDg4YTU4Ni40IDU4Ni40IDAgMCAxIDE5LjI5Ni00LjkyOGM1LjQ0LTEuMjggMTEuMDA4LTIuNTYgMTYuNjQtMy43NDQgNTMuNzYtMTEuNTIgMTE1LjY4LTE4LjQ2NCAxODIuMjA4LTIwLjM1MiA4LjQ4LTAuMjU2IDE3LjAyNC0wLjQxNiAyNS42LTAuNDhoMC4xNkw1MTIgOTZ6IG0wIDU3MmMtMTQ0Ljg5NiAwLTI3Mi4yNTYtMjMuNDI0LTM0Ni42ODgtNjQuOTZ2MTY4Ljk2YzAgMTIuMDMyIDI5LjY5NiAzNC4zNjggODcuNTUyIDUyLjc2OCA2Ny4zOTIgMjEuNDQgMTYwIDMzLjkyIDI1OS4xMzYgMzMuOTIgOTkuMTM2IDAgMTkxLjc0NC0xMi40OCAyNTkuMTM2LTMzLjkyIDU3Ljg1Ni0xOC40IDg3LjUyLTQwLjczNiA4Ny41Mi01Mi43NjhsMC4wMzItMTY4Ljk2Yy03NC40MzIgNDEuNTM2LTIwMS43OTIgNjQuOTYtMzQ2LjY4OCA2NC45NnpNODU4LjY4OCAzNDMuMDRjLTc0LjQzMiA0MS41MzYtMjAxLjc5MiA2NC45Ni0zNDYuNjg4IDY0Ljk2cy0yNzIuMjU2LTIzLjQyNC0zNDYuNjg4LTY0Ljk2VjUxMmMwIDEyLjAzMiAyOS42OTYgMzQuMzY4IDg3LjU1MiA1Mi43NjggNjcuMzkyIDIxLjQ0IDE2MCAzMy45MiAyNTkuMTM2IDMzLjkyIDk5LjEzNiAwIDE5MS43NDQtMTIuNDggMjU5LjEzNi0zMy45MiA1NC45NDQtMTcuNTA0IDg0LjQ4LTM4LjUyOCA4Ny4yOTYtNTAuODhsMC4yMjQtMS44ODh6TTUxMiAxNjUuMzQ0bC0xMy4zMTIgMC4wNjRhMTE2OC45NiAxMTY4Ljk2IDAgMCAwLTExLjY0OCAwLjE5MmwxMS42NDgtMC4xOTJjLTUuNzYgMC4wNjQtMTEuNDg4IDAuMTYtMTcuMTg0IDAuMzJsNS41MzYtMC4xMjhjLTQuOTI4IDAuMDk2LTkuNzkyIDAuMjI0LTE0LjY1NiAwLjQxNmw5LjEyLTAuMjg4Yy02LjQzMiAwLjE2LTEyLjg2NCAwLjM4NC0xOS4yMzIgMC42NGwxMC4xMTItMC4zNTJjLTUuMjggMC4xNi0xMC41MjggMC4zODQtMTUuNzEyIDAuNjRsNS42LTAuMjU2Yy00Ljk5MiAwLjE5Mi05Ljk4NCAwLjQ0OC0xNC45MTIgMC43MzZsOS4yOC0wLjQ4Yy03LjUyIDAuMzItMTUuMDQgMC43NjgtMjIuNDY0IDEuMjhsMTMuMTg0LTAuOGMtNC42NCAwLjI1Ni05LjI0OCAwLjU0NC0xMy44MjQgMC44NjRsMC42NC0wLjA2NGMtNC41NzYgMC4zMi05LjEyIDAuNjQtMTMuNjMyIDEuMDI0bDEyLjk5Mi0wLjk2Yy02LjY4OCAwLjQ0OC0xMy4zMTIgMC45Ni0xOS44NzIgMS41MzZsNi44OC0wLjU3NmMtNC4yODggMC4zMi04LjU0NCAwLjcwNC0xMi44IDEuMTJsNS45Mi0wLjU0NGMtNi4wMTYgMC41MTItMTEuOTY4IDEuMDg4LTE3Ljg4OCAxLjcyOGwxMi0xLjE4NGMtNS4zNDQgMC40OC0xMC42NTYgMS4wMjQtMTUuOTA0IDEuNmwzLjkwNC0wLjQxNmMtNS4wMjQgMC41MTItOS45ODQgMS4wODgtMTQuOTEyIDEuNjY0bDExLjAwOC0xLjI4LTE2LjQ0OCAxLjk1MiA1LjQ0LTAuNjRjLTQuNDggMC41MTItOC45NiAxLjA4OC0xMy4zNzYgMS42OTZsNy45MzYtMS4wNTZjLTYuMDggMC43NjgtMTIuMDMyIDEuNi0xNy45MiAyLjQ2NGw5Ljk4NC0xLjQwOGMtNC44OTYgMC42NC05LjcyOCAxLjM0NC0xNC41MjggMi4wOGw0LjUxMi0wLjY3MmMtNC4zNTIgMC42NC04LjY0IDEuMjgtMTIuOTI4IDEuOTg0bDguNDE2LTEuMzEyYy01Ljk1MiAwLjg5Ni0xMS44NCAxLjg1Ni0xNy42NjQgMi44OGw5LjI4LTEuNTY4LTEzLjY5NiAyLjMzNiA0LjQxNi0wLjc2OGE3ODAuOCA3ODAuOCAwIDAgMC0xNC4xNzYgMi41Nmw5Ljc2LTEuNzkyYy00LjggMC44NjQtOS42IDEuNzkyLTE0LjMwNCAyLjcybDQuNTQ0LTAuODk2Yy00Ljc2OCAwLjkyOC05LjQ3MiAxLjg4OC0xNC4xMTIgMi44OGw5LjU2OC0xLjk4NGMtNC44NjQgMC45Ni05LjY2NCAxLjk4NC0xNC40IDMuMDA4bDQuODMyLTEuMDI0Yy00LjE2IDAuODY0LTguMjU2IDEuNzkyLTEyLjI4OCAyLjcybDcuNDU2LTEuNjk2Yy00LjY0IDEuMDI0LTkuMTg0IDIuMDgtMTMuNjk2IDMuMmw2LjI0LTEuNTA0Yy00LjQ0OCAxLjA1Ni04LjggMi4xMTItMTMuMTIgMy4ybDYuODgtMS42OTZjLTQuNDggMS4wODgtOC44NjQgMi4yMDgtMTMuMTg0IDMuMzZsNi4zMzYtMS42NjRjLTMuOTM2IDEuMDI0LTcuNzc2IDIuMDQ4LTExLjU1MiAzLjEwNGw1LjIxNi0xLjQ0Yy00LjM1MiAxLjE4NC04LjY0IDIuMzY4LTEyLjggMy42MTZsLTcuMTA0IDIuMTc2LTMuMzYgMS4wNTZhNDIyLjA4IDQyMi4wOCAwIDAgMC0xNi45NiA1LjgyNGw0LjM4NC0xLjYtNi40IDIuMzM2IDIuMDE2LTAuNzM2LTYuMzM2IDIuNCA0LjMyLTEuNjY0LTcuMTM2IDIuNzg0IDIuODE2LTEuMTItNi41NiAyLjYyNCAzLjc0NC0xLjUwNGMtMi40MzIgMC45Ni00Ljc2OCAxLjkyLTcuMDQgMi44OGwzLjI5Ni0xLjM3NmEzMDcuNzEyIDMwNy43MTIgMCAwIDAtNS41MDQgMi4zNjhsMi4yNC0wLjk2Yy0yLjI0IDAuOTI4LTQuMzUyIDEuODU2LTYuNCAyLjgxNmw0LjE2LTEuODU2LTYuMjA4IDIuNzg0IDIuMDQ4LTAuOTZhMjYyLjMwNCAyNjIuMzA0IDAgMCAwLTUuMjggMi40OTZsMy4yMzItMS41MzZjLTIzLjM5MiAxMC45NDQtMzcuNzYgMjEuODI0LTQyLjk0NCAzMC4xNDRhMTIuMjU2IDEyLjI1NiAwIDAgMC0yLjE3NiA2LjMzNmMwIDEyLjAzMiAyOS42NjQgMzQuMzY4IDg3LjUyIDUyLjc2OCA2Ny4zOTIgMjEuNDQgMTYwIDMzLjkyIDI1OS4xMzYgMzMuOTIgOTkuMTM2IDAgMTkxLjc0NC0xMi40OCAyNTkuMTM2LTMzLjkyIDU3Ljg1Ni0xOC40IDg3LjUyLTQwLjczNiA4Ny41Mi01Mi43NjggMC0xMi4wMzItMjkuNjY0LTM0LjM2OC04Ny41Mi01Mi43NjgtNjcuMzkyLTIxLjQ0LTE2MC0zMy45Mi0yNTkuMTM2LTMzLjkyeiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iMTk1MCI+PC9wYXRoPjwvc3ZnPg==';
 
    const QH_TIMER_ICO = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjIwODA1Mzg3NDUwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjcyNTkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUzNyAxMzguM3YtMjEuOWg5NXYtNTBIMzkydjUwaDk1djIxLjljLTIxNC44IDEyLjktMzg1IDE5MS4yLTM4NSA0MDkuMiAwIDIyNi40IDE4My42IDQxMCA0MTAgNDEwczQxMC0xODMuNiA0MTAtNDEwYzAtMjE4LTE3MC4yLTM5Ni4zLTM4NS00MDkuMnogbTIyOS42IDY2My44Yy0zMy4xIDMzLjEtNzEuNiA1OS0xMTQuNCA3Ny4yLTQ0LjQgMTguOC05MS41IDI4LjMtMTQwLjEgMjguM3MtOTUuOC05LjUtMTQwLjEtMjguM2MtNDIuOS0xOC4xLTgxLjQtNDQuMS0xMTQuNC03Ny4yLTMzLjEtMzMuMS01OS03MS42LTc3LjItMTE0LjQtMTguOC00NC40LTI4LjMtOTEuNS0yOC4zLTE0MC4xczkuNS05NS44IDI4LjMtMTQwLjFjMTguMS00Mi45IDQ0LjEtODEuNCA3Ny4yLTExNC40czcxLjYtNTkgMTE0LjQtNzcuMmM0NC40LTE4LjggOTEuNS0yOC4zIDE0MC4xLTI4LjNzOTUuOCA5LjUgMTQwLjEgMjguM2M0Mi44IDE4LjEgODEuMyA0NCAxMTQuNCA3Ny4xczU5IDcxLjYgNzcuMiAxMTQuNGMxOC44IDQ0LjQgMjguMyA5MS41IDI4LjMgMTQwLjFzLTkuNSA5NS44LTI4LjMgMTQwLjFjLTE4LjIgNDIuOS00NC4yIDgxLjQtNzcuMiAxMTQuNXpNNTM3IDI1Ni45aC01MHYtNTBoNTB2NTB6IG0tNTAgNTgxLjNoNTB2NTBoLTUwdi01MHpNMTcxLjQgNTIyLjZoNTB2NTBoLTUwdi01MHogbTY4MS4yIDB2NTBoLTUwdi01MGg1MHogbS0zMzMuMyAyOWwxNjUuOSA3MC0xOS40IDQ2LjEtMTg4LjQtNzkuNS03NC4xLTI3My42IDQ4LjMtMTMuMSA2Ny43IDI1MC4xeiIgZmlsbD0iIzJjMmMyYyIgcC1pZD0iNzI2MCI+PC9wYXRoPjwvc3ZnPg==';
 
@@ -1106,107 +1103,107 @@ function addBlocks (Blockly) {
         }
     };
 
-    //显示文本
-    Blockly.Blocks.QDP_esp32_display_samll_CN = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_display_samll_DC,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_SDISPLAY_ICO,
-                        width: 30,
-                        height: 30
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'Serial',
-                        options:Esp32_HardWareSerial_Dropdown
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'pin',
-                        options:[["16", "16"],
-                                ["24", "24"],
-                                ["32", "32"]]
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_colou'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_X'
-                    }, 
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_Y'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_text'
-                    }           
-                ],
-                "tooltip": "显示中文文本信息",
-                colour: color_screen,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // //显示文本
+    // Blockly.Blocks.QDP_esp32_display_samll_CN = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: '%1',
+    //             message1: Blockly.Msg.QDP_esp32_display_samll_DC,
+    //             args0: [
+    //                 {
+    //                     type: 'field_image',
+    //                     src: QH_SDISPLAY_ICO,
+    //                     width: 30,
+    //                     height: 30
+    //                 }
+    //             ],
+    //             args1: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'Serial',
+    //                     options:Esp32_HardWareSerial_Dropdown
+    //                 },
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'pin',
+    //                     options:[["16", "16"],
+    //                             ["24", "24"],
+    //                             ["32", "32"]]
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_colou'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_X'
+    //                 }, 
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_Y'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_text'
+    //                 }           
+    //             ],
+    //             "tooltip": "显示中文文本信息",
+    //             colour: color_screen,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
 
-    //显示文本
-    Blockly.Blocks.QDP_esp32_display_samll_CN_1 = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_display_samll_DC,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_SDISPLAY_ICO,
-                        width: 30,
-                        height: 30
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'Serial',
-                        options:Esp32_HardWareSerial_Dropdown
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'pin',
-                        options:[["16", "16"],
-                                ["24", "24"],
-                                ["32", "32"]]
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_colou'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_X'
-                    }, 
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_Y'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'QDP_display_samll_dc_text'
-                    }           
-                ],
-                "tooltip": "支持中文或中文变量字符串,英文或符号，运行占系统内存较大！",
-                colour: color_screen,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // //显示文本
+    // Blockly.Blocks.QDP_esp32_display_samll_CN_1 = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: '%1',
+    //             message1: Blockly.Msg.QDP_esp32_display_samll_DC,
+    //             args0: [
+    //                 {
+    //                     type: 'field_image',
+    //                     src: QH_SDISPLAY_ICO,
+    //                     width: 30,
+    //                     height: 30
+    //                 }
+    //             ],
+    //             args1: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'Serial',
+    //                     options:Esp32_HardWareSerial_Dropdown
+    //                 },
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'pin',
+    //                     options:[["16", "16"],
+    //                             ["24", "24"],
+    //                             ["32", "32"]]
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_colou'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_X'
+    //                 }, 
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_Y'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'QDP_display_samll_dc_text'
+    //                 }           
+    //             ],
+    //             "tooltip": "支持中文或中文变量字符串,英文或符号，运行占系统内存较大！",
+    //             colour: color_screen,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
 
     //显示文本
     Blockly.Blocks.QDP_esp32_display_samll_SBCDC = {
@@ -1526,7 +1523,7 @@ function addBlocks (Blockly) {
                 args0: [
                     {
                         type: 'field_image',
-                        src: QH_Button_ICO,
+                        src: QH_UltraSonicDistanceSensor_ICO,
                         width: 30,
                         height: 30
                     }
@@ -1545,6 +1542,58 @@ function addBlocks (Blockly) {
                 ],
                 "tooltip": "与按钮功能相同，只是启动这个功能后按法不一样，\n使用前要加 启用多功能按钮 块",
                 colour: color_c02_serson,
+                extensions: ['output_number']
+            });
+        }
+    };
+    Blockly.Blocks.qdp_esp32_chaoshengboI2C = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.qdp_esp32_chaoshengboI2C,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_UltraSonicDistanceSensor_ICO,
+                        width: 30,
+                        height: 30
+                    }
+                ],
+                args1: [
+                ],
+                "tooltip": "超声波测距(I2C模式)，返回单位为mm,传感器盲区2CM\n拨码开关状态:IIC=ON,UART=OFF 切换模式后要断电重启模块！",
+                colour: color_c02_serson2,
+                extensions: ['output_number']
+            });
+        }
+    };
+    Blockly.Blocks.qdp_esp32_chaoshengboSerial = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.qdp_esp32_chaoshengboSerial,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_UltraSonicDistanceSensor_ICO,
+                        width: 30,
+                        height: 30
+                    }
+                ],
+                args1: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'mode',
+                        options: [["IO", "1"],["UART", "0"]]
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'PIN',
+                        options: qdprobotESP32_BOTH_PIN_Output_Dropdown
+                    }                    
+                ],
+                "tooltip": "超声波测距(串口模式/IO模式)，返回单位为mm,传感器盲区2CM\n串口模式拨码开关状态:IIC=OFF,UART=ON\nIO模式拨码开关状态:IIC=OFF,UART=OFF 切换模式后要断电重启模块！",
+                colour: color_c02_serson2,
                 extensions: ['output_number']
             });
         }
@@ -1718,7 +1767,7 @@ function addBlocks (Blockly) {
                     {
                         type: 'field_dropdown',
                         name: 'PIN',
-                        options: qdprobotESP32_L2_PIN_Input_Dropdown
+                        options: qdprobotESP32_R2_PIN_Input_Dropdown
                     },
                     {
                         type: 'field_dropdown',
@@ -2105,7 +2154,7 @@ function addBlocks (Blockly) {
                     {
                         type: 'field_dropdown',
                         name: 'PIN1',
-                        options: qdprobotESP32_L_PIN_Output_Dropdown
+                        options: qdprobotESP32_R_PIN_Output_Dropdown
                     },
                     {
                         type: 'input_value',
@@ -2129,6 +2178,46 @@ function addBlocks (Blockly) {
                     }
                 ],
                 "tooltip": "RGB对应灯号颜色的值，灯号共4个，总灯数跟模块灯数相同，0为全部同时工作\n对应的值是代表第几个灯的，最大255，0为关",
+                colour: QH_Actuator_color,
+                extensions: ['shape_statement']
+            });
+        }
+    };
+
+    //RGB2
+    Blockly.Blocks.rgb_esp32_led2 = {
+        init: function () {
+            this.jsonInit({
+                message0: '%1',
+                message1: Blockly.Msg.rgb_esp32_led2,
+                args0: [
+                    {
+                        type: 'field_image',
+                        src: QH_RGB_ICO,
+                        width: 40,
+                        height: 40
+                    }
+                ],
+                args1: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'PIN1',
+                        options: qdprobotESP32_R_PIN_Output_Dropdown
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'num8'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'num1'
+                    },
+                    {
+                        type: 'input_value',
+                        name: 'colour'
+                    }
+                ],
+                "tooltip": "灯号共4个，总灯数跟模块灯数相同，0为全部同时工作",
                 colour: QH_Actuator_color,
                 extensions: ['shape_statement']
             });
@@ -2579,56 +2668,56 @@ function addBlocks (Blockly) {
         }
     };
 
-    //QF合成
-    Blockly.Blocks.qdp_esp32_QF_hc = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.qdp_esp32_QF_hc,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_SPEECH_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'PIN33',
-                        options: [['女音1', "[m3]"],['男音1', "[m51]"],['男音2', "[m52]"],['女音2', "[m53]"],['唐老鸭', "[m54]"],['女童声', "[m55]"]]
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'PIN44',
-                        options: [[(Blockly.Msg.QH_Donotinterrupt), "1"],[(Blockly.Msg.QH_Interruptible), "0"]]
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num2'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num3'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'TEXT'
-                    }
-                ],
-                "tooltip": '不支持变量，可以直接输入中英文，拼音，标点可以使读音间断\n'
-                           +'“等待完成“是指在合成发音完后才执行下一指令，否则是同时执行下一指令，注意其它参数及发音人的选择\n'
-                           +'此为串口运行设备，如多串口设备运行，运行前要加“软串口定义到”块指令进行切换串口',
-                colour: QH_SPEECH_color3,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // //QF合成
+    // Blockly.Blocks.qdp_esp32_QF_hc = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: '%1',
+    //             message1: Blockly.Msg.qdp_esp32_QF_hc,
+    //             args0: [
+    //                 {
+    //                     type: 'field_image',
+    //                     src: QH_SPEECH_ICO,
+    //                     width: 40,
+    //                     height: 40
+    //                 }
+    //             ],
+    //             args1: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'PIN33',
+    //                     options: [['女音1', "[m3]"],['男音1', "[m51]"],['男音2', "[m52]"],['女音2', "[m53]"],['唐老鸭', "[m54]"],['女童声', "[m55]"]]
+    //                 },
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'PIN44',
+    //                     options: [[(Blockly.Msg.QH_Donotinterrupt), "1"],[(Blockly.Msg.QH_Interruptible), "0"]]
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num2'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num3'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'TEXT'
+    //                 }
+    //             ],
+    //             "tooltip": '不支持变量，可以直接输入中英文，拼音，标点可以使读音间断\n'
+    //                        +'“等待完成“是指在合成发音完后才执行下一指令，否则是同时执行下一指令，注意其它参数及发音人的选择\n'
+    //                        +'此为串口运行设备，如多串口设备运行，运行前要加“软串口定义到”块指令进行切换串口',
+    //             colour: QH_SPEECH_color3,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
 
     //QF合成
     Blockly.Blocks.qdp_esp32_QF_hc_en = {
@@ -2672,60 +2761,60 @@ function addBlocks (Blockly) {
                         name: 'TEXT'
                     }
                 ],
-                "tooltip": '只支持英文和变量',
+                "tooltip": '语音合成',
                 colour: QH_SPEECH_color3,
                 extensions: ['shape_statement']
             });
         }
     };
-    //QF合成
-    Blockly.Blocks.qdp_esp32_QF_hc_chinese = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.qdp_esp32_QF_hc,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_SPEECH_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'PIN33',
-                        options: [['女音1', "[m3]"],['男音1', "[m51]"],['男音2', "[m52]"],['女音2', "[m53]"],['唐老鸭', "[m54]"],['女童声', "[m55]"]]
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'PIN44',
-                        options: [[(Blockly.Msg.QH_Donotinterrupt), "1"],[(Blockly.Msg.QH_Interruptible), "0"]]
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num2'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'num3'
-                    },
-                    {
-                        type: 'input_value',
-                        name: 'TEXT'
-                    }
-                ],
-                "tooltip": '支持中文或中文变量字符串,英文或符号，运行占系统内存较大！',
-                colour: QH_SPEECH_color3,
-                extensions: ['shape_statement']
-            });
-        }
-    };
+    // //QF合成
+    // Blockly.Blocks.qdp_esp32_QF_hc_chinese = {
+    //     init: function () {
+    //         this.jsonInit({
+    //             message0: '%1',
+    //             message1: Blockly.Msg.qdp_esp32_QF_hc,
+    //             args0: [
+    //                 {
+    //                     type: 'field_image',
+    //                     src: QH_SPEECH_ICO,
+    //                     width: 40,
+    //                     height: 40
+    //                 }
+    //             ],
+    //             args1: [
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'PIN33',
+    //                     options: [['女音1', "[m3]"],['男音1', "[m51]"],['男音2', "[m52]"],['女音2', "[m53]"],['唐老鸭', "[m54]"],['女童声', "[m55]"]]
+    //                 },
+    //                 {
+    //                     type: 'field_dropdown',
+    //                     name: 'PIN44',
+    //                     options: [[(Blockly.Msg.QH_Donotinterrupt), "1"],[(Blockly.Msg.QH_Interruptible), "0"]]
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num2'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'num3'
+    //                 },
+    //                 {
+    //                     type: 'input_value',
+    //                     name: 'TEXT'
+    //                 }
+    //             ],
+    //             "tooltip": '支持中文或中文变量字符串,英文或符号，运行占系统内存较大！',
+    //             colour: QH_SPEECH_color3,
+    //             extensions: ['shape_statement']
+    //         });
+    //     }
+    // };
 
     //QF提示音
     Blockly.Blocks.qdp_esp32_QF_sound = {
@@ -5527,8 +5616,8 @@ function addBlocks (Blockly) {
                     {
                         type: 'field_image',
                         src: QH_SMARTCONFIG_ICO,
-                        width: 120,
-                        height: 120
+                        width: 30,
+                        height: 30
                     }
                 ],
                 args1: [
@@ -5902,612 +5991,6 @@ function addBlocks (Blockly) {
         }
     };
 
-    //网页编辑初始化
-    Blockly.Blocks.QDP_esp32_web_page_init = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_esp32_web_page_init,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    },
-                    {
-                      type: "input_dummy"
-                    },
-                    {
-                      type: "input_statement",
-                      name: "DO"
-                    }
-                ],
-                "tooltip": "注：请将ArduinoJson库更新到6.8bate版本，否则不能用！\n打开ArduinoIDE/工具/库管理/ArduinoJson/选6.8bate安装",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页插入元素
-    Blockly.Blocks.QDP_esp32_web_page_add = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_add,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'addType',
-                        options:[
-                                [Blockly.Msg.NumberCard,'NumberCard'],
-                                [Blockly.Msg.HumidityCard,'HumidityCard'],
-                                [Blockly.Msg.StatusCard,'StatusCard'],
-                                [Blockly.Msg.ButtonCard,'ButtonCard'],
-                                [Blockly.Msg.GaugeChart,'GaugeChart']
-                                ]
-                    },
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "name"
-                    }
-                ],
-                "tooltip": "名称支持中文",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页插入温度元素
-    Blockly.Blocks.QDP_esp32_web_page_addTemperatureCard = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_addTemperatureCard,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "name"
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'type',
-                        options:[['°C','0'],
-                                ['°F','1'],
-                                ['K','2'],
-                                ['°R','3'],
-                                ['°De','4'],
-                                ['°N','5']]
-                    }
-                ],
-                "tooltip": "名称支持中文",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页插入滑杆元素
-    Blockly.Blocks.QDP_esp32_web_page_addSliderCard = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_addSliderCard,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "name"
-                    },
-                    {
-                        type: 'field_dropdown',
-                        name: 'type',
-                        options:[[Blockly.Msg.QDP_ESP8266_web_page_Slider_type0,'0'],
-                                [Blockly.Msg.QDP_ESP8266_web_page_Slider_type1,'1'],
-                                [Blockly.Msg.QDP_ESP8266_web_page_Slider_type2,'2'],
-                                [Blockly.Msg.QDP_ESP8266_web_page_Slider_type3,'3']]
-                    }
-                ],
-                "tooltip": "名称支持中文",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页链接滑杆变化事件
-    Blockly.Blocks.QDP_esp32_web_page_attachSliderChanged = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_attachSliderChanged,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-
-                ],
-                "tooltip": "",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页滑杆ID
-    Blockly.Blocks.QDP_esp32_web_page_Slider_id = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_esp32_web_page_Slider_id,
-                args0: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    }
-                ],
-                "tooltip": "",
-                colour:QH_WEB_COLOR,
-                extensions: ['output_number']
-            });
-        }
-    };
-
-    //网页滑杆变化事件
-    Blockly.Blocks.QDP_esp32_web_page_SliderChanged = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_esp32_web_page_SliderChanged,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    },
-                    {
-                      type: "input_dummy"
-                    },
-                    {
-                      type: "input_statement",
-                      name: "DO"
-                    }
-                ],
-                "tooltip": "网页滑杆变化事件",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_hat']
-            });
-        }
-    };
-
-    //网页链接按钮事件
-    Blockly.Blocks.QDP_esp32_web_page_attachButtonClick = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_attachButtonClick,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-
-                ],
-                "tooltip": "",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页按钮事件
-    Blockly.Blocks.QDP_esp32_web_page_ButtonClick = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_esp32_web_page_ButtonClick,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    },
-                    {
-                      type: "input_dummy"
-                    },
-                    {
-                      type: "input_statement",
-                      name: "DO"
-                    }
-                ],
-                "tooltip": "网页滑杆变化事件",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_hat']
-            });
-        }
-    };
-
-    //网页按钮ID
-    Blockly.Blocks.QDP_esp32_web_page_Button_id = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_esp32_web_page_Button_id,
-                args0: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    }
-                ],
-                "tooltip": "网页按钮ID",
-                colour:QH_WEB_COLOR,
-                extensions: ['output_number']
-            });
-        }
-    };
-
-    //网页插入折线图元素
-    Blockly.Blocks.QDP_esp32_web_page_addLineChart = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_addLineChart,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "name"
-                    },
-                    {
-                      type: "input_value",
-                      name: "x_axis_value"
-                    },
-                    {
-                      type: "input_value",
-                      name: "y_axis_name"
-                    },
-                    {
-                      type: "input_value",
-                      name: "y_axis_value"
-                    }
-                ],
-                "tooltip": "网页插入折线图元素",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页更新折线图元素
-    Blockly.Blocks.QDP_esp32_web_page_updateLineChart = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_updateLineChart,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "x_axis_value"
-                    },
-                    {
-                      type: "input_value",
-                      name: "y_axis_value"
-                    }
-                ],
-                "tooltip": "网页更新折线图元素",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页更新元素
-    Blockly.Blocks.QDP_esp32_web_page_update = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_esp32_web_page_update,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'updateType',
-                        options:[
-                                [Blockly.Msg.NumberCard,'NumberCard'],
-                                [Blockly.Msg.TemperatureCard,'TemperatureCard'],
-                                [Blockly.Msg.HumidityCard,'HumidityCard'],
-                                [Blockly.Msg.StatusCard,'StatusCard'],
-                                [Blockly.Msg.SliderCard,'SliderCard'],
-                                [Blockly.Msg.GaugeChart,'GaugeChart']
-                                ]
-                    },
-                    {
-                      type: "input_value",
-                      name: "id"
-                    },
-                    {
-                      type: "input_value",
-                      name: "value"
-                    }
-                ],
-                "tooltip": "网页更新元素",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页串行打印
-    Blockly.Blocks.QDP_web_print_data_32 = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_web_print_data_32,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                        type: 'field_dropdown',
-                        name: 'mode',
-                        options:[[Blockly.Msg.QH_SERIAL_PRINTLN,"0"], [Blockly.Msg.QH_SERIAL_PRINT,"1"]]
-                    },
-                    {
-                      type: "input_value",
-                      name: "web_printing"
-                    }
-                ],
-                "tooltip": "网页串行打印\n<IP Address>/webserial",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网页读取字符串
-    Blockly.Blocks.QDP_web_receive_data_32 = {
-        init: function () {
-            this.jsonInit({
-                message0: Blockly.Msg.QDP_web_receive_data_32,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_WEB_ICO,
-                        width: 40,
-                        height: 40
-                    },
-                    {
-                      type: "input_dummy"
-                    },
-                    {
-                      type: "input_statement",
-                      name: "data"
-                    }
-                ],
-                "tooltip": "网页读取字符串 变量名: web_data",
-                colour:QH_WEB_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网络微数据库初始化
-    Blockly.Blocks.QDP_network_microdatabase_initialization = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_network_microdatabase_initialization,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_DATABASE_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "ssid"
-                    },
-                    {
-                      type: "input_value",
-                      name: "pass"
-                    }
-                ],
-                "tooltip": "网络微数据库初始化",
-                colour:QH_DATABASE_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网络微数据库初始化
-    Blockly.Blocks.QDP_web_microdatabase_update_tags = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_web_microdatabase_update_tags,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_DATABASE_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "tag"
-                    },
-                    {
-                      type: "input_value",
-                      name: "value"
-                    }
-                ],
-                "tooltip": "网络微数据库 更新标签",
-                colour:QH_DATABASE_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网络微数据库 删除标签
-    Blockly.Blocks.QDP_web_microdatabase_delete_tags = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_web_microdatabase_delete_tags,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_DATABASE_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "tag"
-                    }
-                ],
-                "tooltip": "网络微数据库 删除标签",
-                colour:QH_DATABASE_COLOR,
-                extensions: ['shape_statement']
-            });
-        }
-    };
-
-    //网络微数据库 获取标签的值
-    Blockly.Blocks.QDP_web_microdatabase_get_tags = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_web_microdatabase_get_tags,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_DATABASE_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                    {
-                      type: "input_value",
-                      name: "tag"
-                    }
-                ],
-                "tooltip": "网络微数据库 获取标签的值",
-                colour:QH_DATABASE_COLOR,
-                extensions: ['output_number']
-            });
-        }
-    };
-
-    //网络微数据库 查询标签数
-    Blockly.Blocks.QDP_web_microdatabase_count_tags = {
-        init: function () {
-            this.jsonInit({
-                message0: '%1',
-                message1: Blockly.Msg.QDP_web_microdatabase_count_tags,
-                args0: [
-                    {
-                        type: 'field_image',
-                        src: QH_DATABASE_ICO,
-                        width: 40,
-                        height: 40
-                    }
-                ],
-                args1: [
-                ],
-                "tooltip": "网络微数据库 查询标签数",
-                colour:QH_DATABASE_COLOR,
-                extensions: ['output_number']
-            });
-        }
-    };
-
     //注释1
     Blockly.Blocks.qdp_annotation1 = {
         init: function () {
@@ -6593,6 +6076,40 @@ function addBlocks (Blockly) {
                     } 
                 ],
                 "tooltip": "获取变量",
+                colour:QH_OTHER_COLOR,
+                extensions: ['output_number']
+            });
+        }     
+    };
+    //字符串
+    Blockly.Blocks.QH_string = {
+        init: function () {
+            this.jsonInit({
+                message0: '“ %1 ”',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'VAR'
+                    } 
+                ],
+                "tooltip": "字符串",
+                colour:QH_OTHER_COLOR,
+                extensions: ['output_number']
+            });
+        }     
+    };
+    //字符
+    Blockly.Blocks.QH_char = {
+        init: function () {
+            this.jsonInit({
+                message0: '‘ %1 ’',
+                args0: [
+                    {
+                        type: 'input_value',
+                        name: 'VAR'
+                    } 
+                ],
+                "tooltip": "字符",
                 colour:QH_OTHER_COLOR,
                 extensions: ['output_number']
             });
@@ -7174,6 +6691,49 @@ function addBlocks (Blockly) {
             });
         }
     };
+
+    //utf8togbk
+    Blockly.Blocks.utf8togbk = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.utf8togbk,
+                args0: [
+                    {
+                      type: "input_value",
+                      name: "data"
+                    }
+                ],
+                "tooltip": "utf8togbk",
+                colour:QH_OTHER_COLOR,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+    //utf8togbk
+    Blockly.Blocks.type_conversion = {
+        init: function () {
+            this.jsonInit({
+                message0: Blockly.Msg.type_conversion,
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'type',
+                        options:[[Blockly.Msg.LANG_MATH_STRING,"String"], [Blockly.Msg.LANG_MATH_CHAR,"char"], [Blockly.Msg.LANG_MATH_BYTE,"byte"], [Blockly.Msg.LANG_MATH_INT,"int"], [Blockly.Msg.LANG_MATH_LONG,"long"], [Blockly.Msg.LANG_MATH_FLOAT,"float"], [Blockly.Msg.LANG_MATH_WORD,"word"]]
+                    },
+                    {
+                      type: "input_value",
+                      name: "variable"
+                    }
+                ],
+                "tooltip": "utf8togbk",
+                colour:QH_OTHER_COLOR,
+                extensions: ['output_number']
+            });
+        }
+    };
+
+
 
     return Blockly;
 }
